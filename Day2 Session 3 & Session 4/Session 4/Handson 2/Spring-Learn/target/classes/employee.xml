@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        <bean id="dept1" class="com.cognizant.springlearn.Department">
+        	<property name="deptNo" value="1"></property>
+        </bean>
+        
+        <bean id="dept2" class="com.cognizant.springlearn.Department">
+        	<property name="deptNo" value="2" />
+        </bean>
+        
+        <bean id="emp1" class="com.cognizant.springlearn.Employee">
+        	<property name="name" value="Shubham Gupta" />
+        	<property name="age" value="22" />
+        	<property name="salary" value="50000" />
+        	<property name="dept" ref="dept1" />
+        </bean>
+        
+        <bean id="emp2" class="com.cognizant.springlearn.Employee">
+        	<property name="name" value="Abhishek Verma" />
+        	<property name="age" value="23" />
+        	<property name="salary" value="55000" />
+        	<property name="dept" ref="dept2" />
+        </bean>
+        
+        <bean id="emp3" class="com.cognizant.springlearn.Employee">
+        	<property name="name" value="Rahul Dravid" />
+        	<property name="age" value="45" />
+        	<property name="salary" value="75000" />
+        	<property name="dept" ref="dept1" />
+        </bean>
+        
+        <bean id="emp4" class="com.cognizant.springlearn.Employee">
+        	<property name="name" value="MS Dhoni" />
+        	<property name="age" value="38" />
+        	<property name="salary" value="150000" />
+        	<property name="dept" ref="dept1" />
+        </bean>
+        
+        <bean id="departmentList" class="java.util.ArrayList">
+        <constructor-arg>
+        <list>
+        		<ref bean="dept1" />
+        		<ref bean="dept2" />
+        	 </list>
+	</constructor-arg>        
+        </bean>
+        
+        <bean id="employeeList" class="java.util.ArrayList">
+        <constructor-arg>
+        <list>
+        		<ref bean="emp1" />
+        		<ref bean="emp2" />
+        		<ref bean="emp3" />
+        		<ref bean="emp4" />
+        	 </list>
+	</constructor-arg>        
+        </bean>
+</beans>
